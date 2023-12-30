@@ -25,8 +25,10 @@ async function populateEditForm(productId) {
 function fillFormFields(productDetails) {
     // Popola i campi del modulo di modifica con i dati del prodotto
     document.getElementById("editName").value = productDetails.name;
+    document.getElementById("editBrand").value = productDetails.brand;
     document.getElementById("editDescription").value = productDetails.description;
     document.getElementById("editPrice").value = productDetails.price;
+    document.getElementById("editImageUrl").value = productDetails.imageUrl
 }
 
 // funzione per salvare le modifiche del prodotto //
@@ -39,14 +41,18 @@ async function saveChanges() {
             "price": document.getElementById("editPrice").value,
             
         }
-        let response = await fetch(`${url}${id}`, {
-            method: "PUT",
+        const response = await fetch(`${url}`, {
+            method: "POST",
             headers: headers,
             body: JSON.stringify(newRecord)
             
-        })
+        });
 
-         result = await response.json();
+        await new Promise(resolve => setTimeout(resolve, 0));
+
+        // if the changes were successful, close the window and navigate to the homepage //
+        window.close();
+        window.location.href = "./homepage.html";;
     } catch (error) {
         console.log(error);
     }

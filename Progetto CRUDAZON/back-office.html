@@ -17,19 +17,26 @@
     <form id="editForm" class="col">
         <div>
         <!-- Campi del modulo di modifica -->
-            <label for="editName">Nome:</label>
+
+            <label for="editImageUrl">Image:</label>
+            <input type="url" id="editImageUrl" name="editImageUrl" class="mx-5 my-5">
+            
+            <label for="editName">Name:</label>
             <input type="text" id="editName" name="editName" class="mx-5 my-5">
 
-            <label for="editPrice">Prezzo:</label>
+            <label for="editBrand">Brand:</label>
+            <input type="text" id="editBrand" name="editBrand" class="mx-5 my-5">
+
+            <label for="editPrice">Price:</label>
             <input type="text" id="editPrice" name="editPrice" class="mx-5">
             
-            <label for="editDescription" class="form-label"></label>
-            <textarea class="form-control" id="editDescription" rows="3">Descrizione</textarea>
+            <label for="editDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="editDescription" rows="3"></textarea>
         </div>
 
         <!-- Aggiungi altri campi secondo i tuoi requisiti -->
 
-        <button type="button" onclick="saveChanges()" class="btn btn-danger btn-sm my-5">Salva Modifiche</button>
+        <button type="button" onclick="saveChanges()" class="btn btn-danger btn-sm my-5" id="saveButton">Salva Modifiche</button>
     </form>
 
 
@@ -41,6 +48,7 @@
     ></script>
     <script src="./assets/JavaScript/home.js"></script>
     <script src="./assets/JavaScript/back.js"></script>
+    <script src="./assets/JavaScript/backoffice.js"></script>
 
   </body>
 </html>
